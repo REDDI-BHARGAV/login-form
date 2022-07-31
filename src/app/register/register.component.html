@@ -1,0 +1,39 @@
+<h2 style="background-color:aquamarine ;">WELCOME TO CGI</h2>
+<section>
+  <form [formGroup]="myform">
+    <label for="uname">ENTER YOUR NAME:</label>
+    <input type="text" id="uname" formControlName="uname"><br><br>
+    <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.required " class=" alert alert-danger">ENTER USER NAME</div>
+    <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.minlength " class=" alert alert-danger">ENTER USERNAME shouldnot less than 6</div>
+    <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.maxlength " class=" alert alert-danger">ENTER USERNAME shouldnot greater than 15</div>
+    <label for="email"> EMAIL ID:</label>
+   <input type="text" id="email" formControlName="email"><br><br>
+
+   <label for="cname">CONTACT NUMBER :</label>
+   <input type="text" id="cname" formControlName="cname"><br><br>
+   <div *ngIf="myform.controls.cname.invalid && myform.controls.cname.touched && myform.controls.cname.errors.required " class=" alert alert-danger">ENTER CONTACT NUMBER</div>
+   <div *ngIf="myform.controls.cname.invalid && myform.controls.cname.touched && myform.controls.cname.errors.pattern " class=" alert alert-danger"> CONTACT NUMBER SHOULD BE IN NUMBERS</div>
+
+   <label for="">GENDER :-</label>
+   <input type="radio" name="xyz" formControlName="ugen"> MALE 
+   <input type="radio" name="xyz" formControlName="ugen"> FEMALE 
+   <input type="radio" name="xyz" formControlName="ugen"> OTHERS  <br><br>
+
+   <label for="add">ADDRESS :</label>
+   <input type="text" id="add" formControlName="add"><br><br>
+   <div *ngIf="myform.controls.add.invalid && myform.controls.add.touched && myform.controls.add.errors.maxlength " class=" alert alert-danger">ENTER USERNAME shouldnot greater than 50</div>
+   <div *ngIf="myform.controls.add.invalid && myform.controls.add.touched && myform.controls.add.errors.required " class=" alert alert-danger">ENTER USERNAME shouldnot greater than 50</div>
+   
+
+   <label for="dob"> DATE OF BIRTH</label>
+   <input type="date" id="dob" formControlName="dob"><br><br>
+   <div *ngIf="myform.controls.dob.invalid && myform.controls.dob.touched && myform.controls.dob.errors.required " class=" alert alert-danger">ENTER USERNAME DOB</div>
+   
+   
+   
+    <input type="submit" [disabled]="!myform.valid" value="REGISTER" (click)="function()" ><br><br>
+  
+
+  </form>
+
+</section>

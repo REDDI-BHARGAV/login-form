@@ -1,0 +1,27 @@
+h2{
+    text-align: center;
+}
+section{
+    background-color: bisque;
+    height: 530px;
+    margin: 0%;
+}
+form{
+    background-color: blueviolet;
+    width: fit-content;
+    margin-left: 25%;
+    padding-top: 5%;
+    text-align: left;
+   padding-left: 10%;
+   padding-right: 10%;
+   padding-bottom: 7%;
+    border: 8px solid brown;
+    border-radius: 10px;
+}
+input[type="text"]:hover{
+    background-color: yellow;
+   }
+    input[type="submit" ]:hover{
+        background-color: brown;
+
+    }

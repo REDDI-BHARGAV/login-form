@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+nav{
+    height: 70px;
+    width: 75%;
+    background-color: black;
+}
