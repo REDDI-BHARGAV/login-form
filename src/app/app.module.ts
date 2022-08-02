@@ -10,6 +10,9 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { htmlAstToRender3Ast } from '@angular/compiler/src/render3/r3_template_transform';
+import { RegisService } from './regis.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,10 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RegisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

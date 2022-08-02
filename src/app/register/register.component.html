@@ -1,33 +1,41 @@
-<h2 style="background-color:aquamarine ;">WELCOME TO CGI</h2>
+<h2 style="background-color:aquamarine ;">REGISTRATION FORM</h2>
 <section>
   <form [formGroup]="myform">
     <label for="uname">ENTER YOUR NAME:</label>
-    <input type="text" id="uname" formControlName="uname"><br><br>
+    <input type="text" id="uname" formControlName="uname" placeholder="employe name"><br><br>
     <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.required " class=" alert alert-danger">ENTER USER NAME</div>
-    <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.minlength " class=" alert alert-danger">ENTER USERNAME shouldnot less than 6</div>
-    <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.maxlength " class=" alert alert-danger">ENTER USERNAME shouldnot greater than 15</div>
-    <label for="email"> EMAIL ID:</label>
-   <input type="text" id="email" formControlName="email"><br><br>
-
-   <label for="cname">CONTACT NUMBER :</label>
-   <input type="text" id="cname" formControlName="cname"><br><br>
-   <div *ngIf="myform.controls.cname.invalid && myform.controls.cname.touched && myform.controls.cname.errors.required " class=" alert alert-danger">ENTER CONTACT NUMBER</div>
-   <div *ngIf="myform.controls.cname.invalid && myform.controls.cname.touched && myform.controls.cname.errors.pattern " class=" alert alert-danger"> CONTACT NUMBER SHOULD BE IN NUMBERS</div>
-
-   <label for="">GENDER :-</label>
-   <input type="radio" name="xyz" formControlName="ugen"> MALE 
-   <input type="radio" name="xyz" formControlName="ugen"> FEMALE 
-   <input type="radio" name="xyz" formControlName="ugen"> OTHERS  <br><br>
-
-   <label for="add">ADDRESS :</label>
-   <input type="text" id="add" formControlName="add"><br><br>
-   <div *ngIf="myform.controls.add.invalid && myform.controls.add.touched && myform.controls.add.errors.maxlength " class=" alert alert-danger">ENTER USERNAME shouldnot greater than 50</div>
-   <div *ngIf="myform.controls.add.invalid && myform.controls.add.touched && myform.controls.add.errors.required " class=" alert alert-danger">ENTER USERNAME shouldnot greater than 50</div>
+  
    
 
-   <label for="dob"> DATE OF BIRTH</label>
-   <input type="date" id="dob" formControlName="dob"><br><br>
-   <div *ngIf="myform.controls.dob.invalid && myform.controls.dob.touched && myform.controls.dob.errors.required " class=" alert alert-danger">ENTER USERNAME DOB</div>
+   <label for="empid">EMPLOYE ID :</label>
+   <input type="text" id="empid" formControlName="empid" placeholder="enter employe id"><br><br>
+   <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.required " class=" alert alert-danger">ENTER EMPLOYEE ID</div>
+   <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.pattern " class=" alert alert-danger"> EMPLOYEE ID SHOULD BE IN NUMBERS</div>
+   <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.minlength " class=" alert alert-danger">EMP ID SHOULD NOT LESS THAN 4</div>
+   <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.maxlength " class=" alert alert-danger">EMP ID SHOULD NOT GREATER THAN 6</div>
+   
+   <label for="gen" name="gen" >GENDER  : </label>
+   <input type="radio" value="male" formControlName="gen">   MALE
+   <input type="radio" value="female" formControlName="gen"> FEMALE 
+   <input type="radio" value="others" formControlName="gen"> OTHERS  <br><br>
+   <div *ngIf="myform.controls.gen.invalid && myform.controls.gen.touched && myform.controls.gen.errors.required " class=" alert alert-danger">ENTER GENDER </div>
+
+   <label for="LOC">CHOOSE LOCATION :</label>
+
+   <select name="LOC" id="LOC" formControlName="LOC" >
+    
+     <option value="volvo">HYDERABAD</option>
+     <option value="saab">CHENNAI</option>
+     <option value="mercedes">MUMBAI</option>
+     <option value="audi">PUNE</option>
+   </select><br><br>
+   <div *ngIf="myform.controls.LOC.invalid && myform.controls.LOC.touched && myform.controls.LOC.errors.required " class=" alert alert-danger">ENTER LOCATION</div>
+   
+
+   <label for="bb" name="bb" > HAVING BROADBAND ?? </label>
+   <input type="radio"  formControlName="bb" value="yes">  YES
+   <input type="radio"  formControlName="bb" value="no">  NO      <br><br>
+   <div *ngIf="myform.controls.bb.invalid && myform.controls.bb.touched && myform.controls.bb.errors.required " class=" alert alert-danger">ENTER BRAODBRAND </div>
    
    
    

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, MaxLengthValidator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Regis } from 'src/Reg';
+import { RegisService } from '../regis.service';
 
 @Component({
   selector: 'app-register',
@@ -9,22 +11,35 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   myform:FormGroup;
+   public regis:Regis[]=[];
+  regi : Regis = new Regis();
+  
 
-
-  constructor() {
+  constructor( private regisservice: RegisService) {
     this.myform=new FormGroup({
       uname:new FormControl("",[Validators.required,Validators.minLength(6),Validators.maxLength(15)]),
-      cname:new FormControl("",[Validators.required,Validators.pattern('[0-9]*')]),
-      ugen:new FormControl("",[Validators.required]),
-      add:new FormControl("",[Validators.required,Validators.maxLength(50)]),
-      dob:new FormControl("",[Validators.required])
+      empid:new FormControl("",[Validators.required,Validators.minLength(4),Validators.maxLength(6),Validators.pattern('[0-9]*')]),
+      gen:new FormControl("",[Validators.required]),
+      LOC:new FormControl("",[Validators.required]),
+      bb:new FormControl("",[Validators.required])
     })
    }
 
   ngOnInit() {
+   
+  }
+  getNewRegis(){
+    this.regi.uname=this.myform.get("uname").value;
+    this.regi.empid=this.myform.get("empid").value;
+    this.regi.gen=this.myform.get("gen").value;
+    this.regi.LOC=this.myform.get("LOC").value;
+    this.regi.bb=this.myform.get("bb").value;
+    this.regisservice.addBook(this.regi).subscribe((result) => (this.regi = result));
   }
   function() {
+    this.getNewRegis();
     alert('registration completed successfully');
+   
     
   }
 

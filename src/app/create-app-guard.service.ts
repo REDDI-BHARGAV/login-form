@@ -8,7 +8,8 @@ import { LoginComponent } from "./login/login.component";
 export class CreateAddGuardService implements CanDeactivate<LoginComponent>{
     canDeactivate(component: LoginComponent):boolean{
         if(component.myformref.dirty)
-       return confirm('Do You Want Go To Another Page ');
+        alert('login successfully');
+       return confirm('Do You Want to move to register Page ');
         
     }
 }

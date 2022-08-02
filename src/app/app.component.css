@@ -14,7 +14,6 @@ ul li{
 }
 a{
     padding-left: 5px;
-  
     text-decoration: none;
 }
 .footer{
@@ -23,6 +22,11 @@ a{
 }
 
 a:hover{
-    background-color: brown;
+    font-weight: bolder;
+    color: black;
+}
+nav{
+    margin-bottom: 8px;
+    border: 2px solid black;
 }
 

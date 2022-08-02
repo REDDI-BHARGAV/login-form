@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   onclick(ref){
     if(ref.value.username=="cgi" && ref.value.password=="cgi"){
+      
       this.router.navigateByUrl('register');
     }
     else{

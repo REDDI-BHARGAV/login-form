@@ -1,25 +1,32 @@
 h2{
     text-align: center;
+  text-decoration: underline;
+}
+#xyz{
+    text-align: center;
+    height: 50px;
+    text-decoration: none;
 }
 section{
-    background-color: bisque;
+    background: rgb(233, 233, 233);
+    background: radial-gradient(circle, rgba(233, 233, 233, 1) 0%, rgba(138, 255, 251, 1) 100%);
     height: 530px;
     margin: 0%;
 }
 form{
-    background-color: blueviolet;
+    background-color: #f0f1f2;
     width: fit-content;
-    margin-left: 25%;
+    margin-left: 30%;
     padding-top: 5%;
     text-align: left;
    padding-left: 10%;
    padding-right: 10%;
    padding-bottom: 7%;
     border: 8px solid brown;
-    border-radius: 10px;
+    border-radius: 35px;
 }
 input[type="text"]:hover{
-    background-color: yellow;
+    background-color: rgb(22, 176, 176);
    }
     input[type="submit" ]:hover{
         background-color: brown;
