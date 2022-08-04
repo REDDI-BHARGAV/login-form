@@ -17,8 +17,8 @@ export class RegisService {
     return this.http.get<Regis[]>(this._url);
   }
   addBook(book: Regis): Observable<Regis> {
-    console.log(book);
-    // perform the appropriate API call here that will add a book to the server
+    
+   
     return this.http.post<Regis>(this._url, book);
   }
 

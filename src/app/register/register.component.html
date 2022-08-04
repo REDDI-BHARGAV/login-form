@@ -1,43 +1,52 @@
-<h2 style="background-color:aquamarine ;">REGISTRATION FORM</h2>
+<h2 style="background-color:aquamarine ;"><span class="material-symbols-outlined">
+  how_to_reg
+  </span>REGISTRATION FORM</h2>
 <section>
-  <form [formGroup]="myform">
-    <label for="uname">ENTER YOUR NAME:</label>
-    <input type="text" id="uname" formControlName="uname" placeholder="employe name"><br><br>
+  <form [formGroup]="myform" (submit)="method()">
+    <label for="uname"><span class="material-symbols-outlined">
+      person
+    </span>ENTER YOUR NAME:</label><br>
+    <input type="text" id="uname" formControlName="uname" class="form-control" placeholder="employe name" ><br>
     <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.required " class=" alert alert-danger">ENTER USER NAME</div>
   
    
 
-   <label for="empid">EMPLOYE ID :</label>
-   <input type="text" id="empid" formControlName="empid" placeholder="enter employe id"><br><br>
+   <label for="empid"><span class="material-symbols-outlined">
+    remember_me
+    </span>EMPLOYE ID :</label><br>
+   <input type="text" id="empid" formControlName="empid" class="form-control" placeholder="enter employe id"><br>
    <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.required " class=" alert alert-danger">ENTER EMPLOYEE ID</div>
    <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.pattern " class=" alert alert-danger"> EMPLOYEE ID SHOULD BE IN NUMBERS</div>
    <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.minlength " class=" alert alert-danger">EMP ID SHOULD NOT LESS THAN 4</div>
    <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.maxlength " class=" alert alert-danger">EMP ID SHOULD NOT GREATER THAN 6</div>
    
-   <label for="gen" name="gen" >GENDER  : </label>
-   <input type="radio" value="male" formControlName="gen">   MALE
+   <label for="gen" name="gen" > <span class="material-symbols-outlined">
+    man
+    </span>GENDER  : </label><br>
+   <input type="radio" value="male" formControlName="gen">   MALE  
    <input type="radio" value="female" formControlName="gen"> FEMALE 
    <input type="radio" value="others" formControlName="gen"> OTHERS  <br><br>
    <div *ngIf="myform.controls.gen.invalid && myform.controls.gen.touched && myform.controls.gen.errors.required " class=" alert alert-danger">ENTER GENDER </div>
 
-   <label for="LOC">CHOOSE LOCATION :</label>
-
-   <select name="LOC" id="LOC" formControlName="LOC" >
-    
-     <option value="volvo">HYDERABAD</option>
-     <option value="saab">CHENNAI</option>
-     <option value="mercedes">MUMBAI</option>
-     <option value="audi">PUNE</option>
-   </select><br><br>
+   <label for="LOC"><span class="material-symbols-outlined">
+    location_city
+    </span> CITY  :</label><br>
+    <input type="text" id="LOC" formControlName="LOC"  class="form-control" placeholder="loctaion" ><br>
+   
    <div *ngIf="myform.controls.LOC.invalid && myform.controls.LOC.touched && myform.controls.LOC.errors.required " class=" alert alert-danger">ENTER LOCATION</div>
    
 
-   <label for="bb" name="bb" > HAVING BROADBAND ?? </label>
+   <label for="bb" name="bb" > <span class="material-symbols-outlined">
+    signal_wifi_statusbar_not_connected
+    </span>HAVING BROADBAND ?? </label>
    <input type="radio"  formControlName="bb" value="yes">  YES
    <input type="radio"  formControlName="bb" value="no">  NO      <br><br>
    <div *ngIf="myform.controls.bb.invalid && myform.controls.bb.touched && myform.controls.bb.errors.required " class=" alert alert-danger">ENTER BRAODBRAND </div>
    
+   <label for="isp"> NAME OF ISP :</label><br>
+    <input type="text" id="isp" formControlName="isp"  class="form-control" placeholder="Name Of ISP" ><br>
    
+   <div *ngIf="myform.controls.isp.invalid && myform.controls.isp.touched && myform.controls.isp.errors.required " class=" alert alert-danger">ENTER ISP TYPE</div>
    
     <input type="submit" [disabled]="!myform.valid" value="REGISTER" (click)="function()" ><br><br>
   

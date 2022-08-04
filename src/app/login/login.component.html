@@ -1,18 +1,68 @@
-<h2 id="xyz" style="background-color:aquamarine ;" >WELCOME TO CGI</h2>
+<h2 id="xyz" style="background-color: aquamarine;">WELCOME TO CGI</h2>
 <section>
-  
   <form #myform="ngForm">
-    <h2 style="text-align: center;"> LOGIN FORM</h2>
-    <label for=""> ENTER YOUR  NAME</label>
-    <input type="text" ngModel #fform="ngModel" name="username" placeholder="username" class="form-control" minlength="6" required="required" ><br>
-    <div *ngIf="fform.touched && fform.invalid && fform.errors.required" class="alert alert-danger">* USER NAME IS REQUIRED</div>
-   
+    <h2 style="text-align: center;">
+      LOGIN FORM
+      <span class="material-symbols-outlined">
+        login
+      </span>
+    </h2>
+    <label for="">
+      <span class="material-symbols-outlined">
+        person
+      </span>
+      ENTER YOUR NAME
+    </label>
+    <input
+      type="text"
+      ngModel
+      #fform="ngModel"
+      name="username"
+      placeholder="username"
+      class="form-control"
+      minlength="6"
+      required="required"
+    />
+    <br />
+    <div
+      *ngIf="fform.touched && fform.invalid && fform.errors.required"
+      class="alert alert-danger"
+    >
+      <h6>* USER NAME IS REQUIRED</h6>
+    </div>
 
-    <label for=""> ENTER YOUR  PASSWORD</label>
-    <input type="password" ngModel #fpsw="ngModel" name="password" class="form-control" placeholder="password" required="required" ><br>
-    <div *ngIf="fpsw.touched && fpsw.invalid && fpsw.errors.required" class="alert alert-danger"> * PASSWORD  IS REQUIRED</div>
-    <input type="submit" value="login" (click)="onclick(myform)" class="btn btn-success"><br><br>
-    <h2><span style="color: red;"> {{msg}} </span></h2>
-
+    <label for="">
+      <span class="material-symbols-outlined">
+        key_off
+      </span>
+      ENTER YOUR PASSWORD
+    </label>
+    <input
+      type="password"
+      ngModel
+      #fpsw="ngModel"
+      name="password"
+      class="form-control"
+      placeholder="password"
+      required="required"
+    />
+    <br />
+    <div
+      *ngIf="fpsw.touched && fpsw.invalid && fpsw.errors.required"
+      class="alert alert-danger"
+    >
+      <h6>* PASSWORD IS REQUIRED</h6>
+    </div>
+    <input
+      type="submit"
+      value="login"
+      (click)="onclick(myform)"
+      class="btn btn-success"
+    />
+    <br />
+    <br />
+    <h3>
+      <span style="color: red;">{{ msg }}</span>
+    </h3>
   </form>
 </section>

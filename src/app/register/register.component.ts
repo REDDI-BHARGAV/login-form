@@ -21,12 +21,16 @@ export class RegisterComponent implements OnInit {
       empid:new FormControl("",[Validators.required,Validators.minLength(4),Validators.maxLength(6),Validators.pattern('[0-9]*')]),
       gen:new FormControl("",[Validators.required]),
       LOC:new FormControl("",[Validators.required]),
-      bb:new FormControl("",[Validators.required])
+      bb:new FormControl("",[Validators.required]),
+      isp:new FormControl("",[Validators.required])
     })
    }
 
   ngOnInit() {
    
+  }
+  method(){
+    console.log(this.regisservice.getRegis());
   }
   getNewRegis(){
     this.regi.uname=this.myform.get("uname").value;
@@ -34,6 +38,8 @@ export class RegisterComponent implements OnInit {
     this.regi.gen=this.myform.get("gen").value;
     this.regi.LOC=this.myform.get("LOC").value;
     this.regi.bb=this.myform.get("bb").value;
+    this.regi.isp=this.myform.get("isp").value;
+    
     this.regisservice.addBook(this.regi).subscribe((result) => (this.regi = result));
   }
   function() {

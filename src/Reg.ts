@@ -5,6 +5,7 @@ export class Regis {
     gen: String;
     LOC: string;
     bb:String;
+    isp:String;
    
 
     constructor() {
@@ -13,6 +14,7 @@ export class Regis {
         this.gen = "";
         this.LOC = "";
         this.bb="";
+        this.isp="";
 
         
     }
