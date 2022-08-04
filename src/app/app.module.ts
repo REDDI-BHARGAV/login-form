@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { htmlAstToRender3Ast } from '@angular/compiler/src/render3/r3_template_transform';
 import { RegisService } from './regis.service';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [

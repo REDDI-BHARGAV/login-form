@@ -1,7 +1,7 @@
 
 
 h1{
-    background-color: aqua;
+    background-color: rgb(222, 238, 238);
     font-size: xx-large;
 }
 nav{
@@ -26,7 +26,7 @@ a:hover{
     color: black;
 }
 nav{
-    margin-bottom: 8px;
+    
     border: 2px solid black;
 }
 

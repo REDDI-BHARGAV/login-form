@@ -2,18 +2,20 @@
   how_to_reg
   </span>REGISTRATION FORM</h2>
 <section>
-  <form [formGroup]="myform" (submit)="method()">
-    <label for="uname"><span class="material-symbols-outlined">
+  <form [formGroup]="myform" >
+   <!--<label for="uname" class="form-label"><span class="material-symbols-outlined">
       person
-    </span>ENTER YOUR NAME:</label><br>
-    <input type="text" id="uname" formControlName="uname" class="form-control" placeholder="employe name" ><br>
-    <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.required " class=" alert alert-danger">ENTER USER NAME</div>
+    </span>ENTER YOUR NAME:</label><br>  -->
+   <span><i class="fa fa-user"></i>
+   
+   <input type="text" id="uname" formControlName="uname" class="form-control" placeholder="employe name" > <br>
+    <div *ngIf="myform.controls.uname.invalid && myform.controls.uname.touched && myform.controls.uname.errors.required " class=" alert alert-danger">ENTER USER NAME</div></span>
   
    
 
-   <label for="empid"><span class="material-symbols-outlined">
+   <!-- <label for="empid"><span class="material-symbols-outlined">
     remember_me
-    </span>EMPLOYE ID :</label><br>
+    </span>EMPLOYE ID :</label><br> -->
    <input type="text" id="empid" formControlName="empid" class="form-control" placeholder="enter employe id"><br>
    <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.required " class=" alert alert-danger">ENTER EMPLOYEE ID</div>
    <div *ngIf="myform.controls.empid.invalid && myform.controls.empid.touched && myform.controls.empid.errors.pattern " class=" alert alert-danger"> EMPLOYEE ID SHOULD BE IN NUMBERS</div>
@@ -31,7 +33,7 @@
    <label for="LOC"><span class="material-symbols-outlined">
     location_city
     </span> CITY  :</label><br>
-    <input type="text" id="LOC" formControlName="LOC"  class="form-control" placeholder="loctaion" ><br>
+    <input type="text" id="LOC" formControlName="LOC"  class="form-control" placeholder="enter city" ><br>
    
    <div *ngIf="myform.controls.LOC.invalid && myform.controls.LOC.touched && myform.controls.LOC.errors.required " class=" alert alert-danger">ENTER LOCATION</div>
    
@@ -43,12 +45,13 @@
    <input type="radio"  formControlName="bb" value="no">  NO      <br><br>
    <div *ngIf="myform.controls.bb.invalid && myform.controls.bb.touched && myform.controls.bb.errors.required " class=" alert alert-danger">ENTER BRAODBRAND </div>
    
-   <label for="isp"> NAME OF ISP :</label><br>
+   <!--  <label for="isp"> NAME OF ISP :</label><br> -->
     <input type="text" id="isp" formControlName="isp"  class="form-control" placeholder="Name Of ISP" ><br>
    
    <div *ngIf="myform.controls.isp.invalid && myform.controls.isp.touched && myform.controls.isp.errors.required " class=" alert alert-danger">ENTER ISP TYPE</div>
    
-    <input type="submit" [disabled]="!myform.valid" value="REGISTER" (click)="function()" ><br><br>
+    <input type="submit" [disabled]="!myform.valid" value="REGISTER" (click)="function()" > 
+    <a href="https://public.tableau.com/views/emp_16596258844020/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link">VIEW </a>
   
 
   </form>
